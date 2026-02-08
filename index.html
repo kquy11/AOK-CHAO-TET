@@ -57,14 +57,19 @@
     <div class="note">Bạn không cần trả lời câu hỏi này.</div>
     <div class="club">— CLB ___</div>
   </div>
+<script>
+  const questions = [
+    "Năm qua bạn đã sống vì bản thân hay gia đình mình?",
+    "Có điều gì bạn muốn thay đổi nhưng chưa dám bắt đầu?",
+    "Năm qua bạn đã thật sự lắng nghe mong muốn của bản thân mình chưa?",
+    "Năm qua bạn đã cố gắng vì điều gì?"
+  ];
 
-  <script>
-    const questions = [
-  "Bạn đang sống theo lựa chọn của mình, hay theo thói quen?",
-  "Có điều gì bạn muốn thay đổi nhưng chưa dám bắt đầu?",
-  "Bạn có đang thật sự lắng nghe bản thân?",
-  "Nếu không sợ thất bại, bạn sẽ làm gì?",
-  "Bạn đang cố gắng vì điều gì?"];
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  document.getElementById("question").innerText = randomItem(questions);
 
     const messages = [
       "Bạn không cần trả lời câu này cho bất kỳ ai.",
