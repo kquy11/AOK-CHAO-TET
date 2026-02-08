@@ -17,38 +17,64 @@
     }
 
     .card {
-      max-width: 320px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 20px;
-      padding: 30px 25px;
+      max-width: 340px;
+      width: 90%;
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      padding: 30px 24px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
 
     .question {
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 16px;
+      color: #000;
     }
 
     .message {
       font-size: 14px;
       color: #555;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .prompt {
+      font-size: 13px;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      font-size: 14px;
+      resize: none;
+      outline: none;
+      font-family: Arial, sans-serif;
+      margin-bottom: 18px;
+    }
+
+    textarea::placeholder {
+      color: #aaa;
     }
 
     .note {
       font-size: 12px;
       color: #888;
+      margin-bottom: 8px;
     }
 
     .club {
       font-size: 13px;
-      margin-top: 10px;
       opacity: 0.6;
     }
 
-    /* TÔ ĐẬM AOK */
     .aok {
       font-weight: bold;
       color: #000;
@@ -61,9 +87,15 @@
   <div class="card">
     <div class="question" id="question"></div>
     <div class="message" id="message"></div>
-    <div class="club">[cho AOK xin cảm nhận của bạn nhé]</div>
-    <div class="note">Chúc bạn một năm mới an lành.</div>
-    <div class="club">__ CLB TNTN ___</div>
+
+    <!-- DÒNG BẠN YÊU CẦU -->
+    <div class="prompt">[Hãy cho AOK được biết cảm nhận của bạn]</div>
+
+    <!-- Ô NHẬP CẢM NHẬN -->
+    <textarea placeholder="Bạn có thể viết bất cứ điều gì bạn đang nghĩ…"></textarea>
+
+    <div class="note">Chúc bạn một năm an lành.</div>
+    <div class="club">— CLB TNTN</div>
   </div>
 
   <script>
@@ -106,9 +138,9 @@
       }
     ];
 
-    const random = data[Math.floor(Math.random() * data.length)];
-    document.getElementById("question").innerText = random.q;
-    document.getElementById("message").innerHTML = random.a;
+    const randomItem = data[Math.floor(Math.random() * data.length)];
+    document.getElementById("question").innerText = randomItem.q;
+    document.getElementById("message").innerHTML = randomItem.a;
   </script>
 
 </body>
