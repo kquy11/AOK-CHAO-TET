@@ -2,8 +2,9 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Câu hỏi ẩn danh</title>
+  <title>AOK – Câu hỏi ẩn danh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
@@ -28,6 +29,7 @@
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 20px;
+      color: #222;
     }
 
     .message {
@@ -47,73 +49,71 @@
       margin-top: 10px;
       opacity: 0.6;
     }
+
+    /* Tô đậm AOK */
+    .aok {
+      font-weight: bold;
+      color: #000;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="card">
     <div class="question" id="question"></div>
     <div class="message" id="message"></div>
-    <div class="note">Bạn không cần trả lời câu hỏi này.</div>
-    <div class="club">— CLB ___</div>
+    <div class="note">
+      Bạn không cần trả lời. Chỉ cần dành một chút thời gian cho chính mình.
+    </div>
+    <div class="club">— AOK · Khai bút đầu năm</div>
   </div>
-<script>
-  const data = [
-    {
-      question: "Năm vừa qua là một năm như thế nào đối với bạn?",
-      message: "AOK nghĩ năm qua là một năm nhiều thử thách."
-    },
-    {
-      question: "Điều khiến bạn tự hào nhất về bản thân trong năm qua là gì?",
-      message: "AOK tin bạn đã rất kiên cường và cố gắng."
-    },
-    {
-      question: "Khó khăn lớn nhất bạn đã trải qua trong năm là gì?",
-      message: "AOK nghĩ khó khăn trong năm đã giúp bạn mạnh mẽ hơn."
-    },
-    {
-      question: "Bạn đã học được bài học quan trọng nào từ những trải nghiệm đó?",
-      message: "AOK tin bạn học được bài học về sự kiên trì."
-    },
-    {
-      question: "Có thói quen nào bạn đã thay đổi trong năm vừa rồi không?",
-      message: "AOK nghĩ bạn đã thay đổi được những thói quen chưa tốt."
-    },
-    {
-      question: "Bạn cảm thấy bản thân mình đã trưởng thành hơn ở điểm nào?",
-      message: "AOK tin bạn đã trưởng thành hơn trong suy nghĩ."
-    },
-    {
-      question: "Điều gì trong năm qua khiến bạn tiếc nuối nhất?",
-      message: "AOK nghĩ điều tiếc nuối là chưa dành đủ thời gian cho gia đình."
-    },
-    {
-      question: "Nếu được viết một câu cho bản thân khi khai bút, bạn sẽ viết gì?",
-      message: "AOK mong bạn luôn tin vào chính mình khi khai bút."
-    },
-    {
-      question: "Bạn mong muốn thay đổi điều gì ở chính mình trong năm mới?",
-      message: "AOK hy vọng bạn sẽ tích cực và kỷ luật hơn trong năm mới."
-    }
-  ];
 
-  const randomItem = data[Math.floor(Math.random() * data.length)];
+  <script>
+    const data = [
+      {
+        question: "Năm vừa qua là một năm như thế nào đối với bạn?",
+        message: "AOK nghĩ năm qua là một năm nhiều thử thách."
+      },
+      {
+        question: "Điều khiến bạn tự hào nhất về bản thân trong năm qua là gì?",
+        message: "AOK tin bạn đã rất kiên cường và cố gắng."
+      },
+      {
+        question: "Khó khăn lớn nhất bạn đã trải qua trong năm là gì?",
+        message: "AOK nghĩ khó khăn trong năm đã giúp bạn mạnh mẽ hơn."
+      },
+      {
+        question: "Bạn đã học được bài học quan trọng nào từ những trải nghiệm đó?",
+        message: "AOK tin bạn học được bài học về sự kiên trì."
+      },
+      {
+        question: "Có thói quen nào bạn đã thay đổi trong năm vừa rồi không?",
+        message: "AOK nghĩ bạn đã thay đổi được những thói quen chưa tốt."
+      },
+      {
+        question: "Bạn cảm thấy bản thân mình đã trưởng thành hơn ở điểm nào?",
+        message: "AOK tin bạn đã trưởng thành hơn trong suy nghĩ."
+      },
+      {
+        question: "Điều gì trong năm qua khiến bạn tiếc nuối nhất?",
+        message: "AOK nghĩ điều tiếc nuối là chưa dành đủ thời gian cho gia đình."
+      },
+      {
+        question: "Nếu được viết một câu cho bản thân khi khai bút, bạn sẽ viết gì?",
+        message: "AOK mong bạn luôn tin vào chính mình khi khai bút."
+      },
+      {
+        question: "Bạn mong muốn thay đổi điều gì ở chính mình trong năm mới?",
+        message: "AOK hy vọng bạn sẽ tích cực và kỷ luật hơn trong năm mới."
+      }
+    ];
 
-  document.getElementById("question").innerText = randomItem.question;
-  document.getElementById("message").innerText = randomItem.message;
-   function randomItem(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
+    const randomItem = data[Math.floor(Math.random() * data.length)];
 
-    document.getElementById("question").innerText = randomItem(questions);
-    document.getElementById("message").innerText = randomItem(messages);
-  .aok {
-  font-weight: bold;
-  color: #000;
-}
-</script>
-
-   
+    document.getElementById("question").innerText = randomItem.question;
+    document.getElementById("message").innerHTML =
+      `<span class="aok">AOK</span>${randomItem.message.replace("AOK", "")}`;
   </script>
 
 </body>
