@@ -58,26 +58,50 @@
     <div class="club">— CLB ___</div>
   </div>
 <script>
-  const questions = [
-    "Năm qua bạn đã sống vì bản thân hay gia đình mình?",
-    "Có điều gì bạn muốn thay đổi nhưng chưa dám bắt đầu?",
-    "Năm qua bạn đã thật sự lắng nghe mong muốn của bản thân mình chưa?",
-    "Năm qua bạn đã cố gắng vì điều gì?"
+  const data = [
+    {
+      question: "Năm vừa qua là một năm như thế nào đối với bạn?",
+      message: "AOK nghĩ năm qua là một năm nhiều thử thách."
+    },
+    {
+      question: "Điều khiến bạn tự hào nhất về bản thân trong năm qua là gì?",
+      message: "AOK tin bạn đã rất kiên cường và cố gắng."
+    },
+    {
+      question: "Khó khăn lớn nhất bạn đã trải qua trong năm là gì?",
+      message: "AOK nghĩ khó khăn trong năm đã giúp bạn mạnh mẽ hơn."
+    },
+    {
+      question: "Bạn đã học được bài học quan trọng nào từ những trải nghiệm đó?",
+      message: "AOK tin bạn học được bài học về sự kiên trì."
+    },
+    {
+      question: "Có thói quen nào bạn đã thay đổi trong năm vừa rồi không?",
+      message: "AOK nghĩ bạn đã thay đổi được những thói quen chưa tốt."
+    },
+    {
+      question: "Bạn cảm thấy bản thân mình đã trưởng thành hơn ở điểm nào?",
+      message: "AOK tin bạn đã trưởng thành hơn trong suy nghĩ."
+    },
+    {
+      question: "Điều gì trong năm qua khiến bạn tiếc nuối nhất?",
+      message: "AOK nghĩ điều tiếc nuối là chưa dành đủ thời gian cho gia đình."
+    },
+    {
+      question: "Nếu được viết một câu cho bản thân khi khai bút, bạn sẽ viết gì?",
+      message: "AOK mong bạn luôn tin vào chính mình khi khai bút."
+    },
+    {
+      question: "Bạn mong muốn thay đổi điều gì ở chính mình trong năm mới?",
+      message: "AOK hy vọng bạn sẽ tích cực và kỷ luật hơn trong năm mới."
+    }
   ];
 
-  function randomItem(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
+  const randomItem = data[Math.floor(Math.random() * data.length)];
 
-  document.getElementById("question").innerText = randomItem(questions);
-
-    const messages = [
-      "Bạn không cần trả lời câu này cho bất kỳ ai.",
-      "Không phải câu hỏi nào cũng cần đáp án ngay.",
-      "Chỉ cần bạn đã dừng lại để nghĩ.",
-      "Giữ lại câu này cho riêng mình.",
-      "CLB ___ tin rằng sự im lặng cũng có giá trị."
-    ];
+  document.getElementById("question").innerText = randomItem.question;
+  document.getElementById("message").innerText = randomItem.message;
+</script>
 
     function randomItem(arr) {
       return arr[Math.floor(Math.random() * arr.length)];
@@ -85,6 +109,10 @@
 
     document.getElementById("question").innerText = randomItem(questions);
     document.getElementById("message").innerText = randomItem(messages);
+  .aok {
+  font-weight: bold;
+  color: #000;
+}
   </script>
 
 </body>
