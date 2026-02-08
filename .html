@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Câu hỏi ẩn danh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      max-width: 320px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .question {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      font-size: 14px;
+      color: #555;
+      margin-top: 15px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #888;
+      margin-top: 25px;
+    }
+
+    .club {
+      font-size: 13px;
+      margin-top: 10px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="question" id="question"></div>
+    <div class="message" id="message"></div>
+    <div class="note">Bạn không cần trả lời câu hỏi này.</div>
+    <div class="club">— CLB ___</div>
+  </div>
+
+  <script>
+    const questions = ["Bạn đang sống theo lựa chọn của mình, hay theo thói quen?",
+                          "Có điều gì bạn muốn thay đổi nhưng chưa dám bắt đầu?",
+                              "Bạn có đang thật sự lắng nghe bản thân?",
+                     0         "Nếu không sợ thất bại, bạn sẽ làm gì?",
+                                  "Bạn đang cố gắng vì điều gì?"];
+
+    const messages = [
+      "Bạn không cần trả lời câu này cho bất kỳ ai.",
+      "Không phải câu hỏi nào cũng cần đáp án ngay.",
+      "Chỉ cần bạn đã dừng lại để nghĩ.",
+      "Giữ lại câu này cho riêng mình.",
+      "CLB ___ tin rằng sự im lặng cũng có giá trị."
+    ];
+
+    function randomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    document.getElementById("question").innerText = randomItem(questions);
+    document.getElementById("message").innerText = randomItem(messages);
+  </script>
+
+</body>
+</html>
