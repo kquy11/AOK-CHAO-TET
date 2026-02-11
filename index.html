@@ -87,14 +87,13 @@
     <div class="question" id="question"></div>
     <div class="message" id="message"></div>
 
-    <!-- PHẦN NGƯỜI DÙNG ĐIỀN -->
     <div class="feedback-title">
       Hãy cho AOK được biết cảm nhận của bạn  
       (Họ và tên + MSSV + Mã lớp + cảm nhận)
     </div>
 
     <textarea
-      placeholder="Ví dụ: Nguyễn Văn A – 2212345 – CNTT01 – Em cảm thấy hoạt động này giúp em nhìn lại bản thân rõ hơn..."
+      placeholder="Ví dụ: Nguyễn Văn A – 2212345 – CNTT01 – Em cảm thấy hoạt động này giúp em có thêm động lực cho năm mới..."
     ></textarea>
 
     <div class="note">Chúc bạn một năm an lành.</div>
@@ -105,43 +104,43 @@
     const data = [
       {
         q: "Một mục tiêu cá nhân bạn đặt ra cho năm tới là gì?",
-        a: "<span class='aok'>AOK</span> tin rằng mục tiêu bạn đặt ra hôm nay sẽ trở thành động lực mạnh mẽ cho cả năm phía trước. "
+        a: "<span class='aok'>AOK</span> tin rằng mục tiêu bạn đặt ra hôm nay sẽ trở thành động lực mạnh mẽ cho cả năm phía trước."
       },
       {
         q: "Bạn mong muốn thay đổi điều gì ở chính mình trong năm mới?",
-        a: "<span class='aok'>AOK</span> AOK nghĩ rằng mỗi thay đổi tích cực dù nhỏ cũng sẽ tạo nên một phiên bản tốt hơn của bạn"
+        a: "<span class='aok'>AOK</span> nghĩ rằng mỗi thay đổi tích cực dù nhỏ cũng sẽ tạo nên một phiên bản tốt hơn của bạn."
       },
       {
         q: "Thành tựu bạn mong muốn đạt được trong năm nay là gì?",
-        a: "<span class='aok'>AOK</span> AOK tin rằng với sự kiên trì, bạn hoàn toàn xứng đáng với những thành tựu rực rỡ nhất."
+        a: "<span class='aok'>AOK</span> tin rằng với sự kiên trì, bạn hoàn toàn xứng đáng với những thành tựu rực rỡ nhất."
       },
       {
         q: "Mục tiêu lớn nhất bạn muốn chinh phục trong năm nay là gì?",
-        a: "<span class='aok'>AOK</span> AOK mong rằng bạn sẽ dũng cảm theo đuổi mục tiêu lớn nhất đến cùng."
+        a: "<span class='aok'>AOK</span> mong rằng bạn sẽ dũng cảm theo đuổi mục tiêu lớn nhất đến cùng."
       },
       {
         q: "Một thói quen nhỏ mà bạn muốn tiếp tục duy trì trong năm mới này?",
-        a: "<span class='aok'>AOK</span> AOK tin rằng những thói quen nhỏ tích cực hôm nay sẽ tạo nên thành công lớn ngày mai."
+        a: "<span class='aok'>AOK</span> tin rằng những thói quen nhỏ tích cực hôm nay sẽ tạo nên thành công lớn ngày mai."
       },
       {
         q: "Môn học nào trong năm nay bạn quyết tâm không “học qua loa”?",
-        a: "<span class='aok'>AOK</span> AOK chúc bạn giữ được tinh thần học tập nghiêm túc và bứt phá trong môn học mình đã chọn."
+        a: "<span class='aok'>AOK</span> chúc bạn giữ được tinh thần học tập nghiêm túc và bứt phá trong môn học mình đã chọn."
       },
       {
         q: "Điều gì khiến bạn hy vọng nhất khi bước sang năm mới?",
-        a: "<span class='aok'>AOK</span> AOK nghĩ rằng năm mới luôn mở ra những cơ hội tuyệt vời đang chờ bạn khám phá."
+        a: "<span class='aok'>AOK</span> nghĩ rằng năm mới luôn mở ra những cơ hội tuyệt vời đang chờ bạn khám phá."
       },
       {
         q: "Nếu được gửi một tin nhắn cho chính mình vào cuối năm, bạn sẽ viết gì?",
-        a: "<span class='aok'>AOK</span> AOK mong rằng cuối năm bạn sẽ tự hào nhắn nhủ: “Mình đã làm rất tốt!”"
+        a: "<span class='aok'>AOK</span> mong rằng cuối năm bạn sẽ tự hào nhắn nhủ: “Mình đã làm rất tốt!”"
       },
       {
         q: "Bạn muốn thử thách bản thân bằng điều gì mới?",
-        a: "<span class='aok'>AOK</span> AOK tin rằng mỗi thử thách mới sẽ giúp bạn mạnh mẽ và tự tin hơn từng ngày."
-      }
-    ];
-    q: "Bạn muốn học thêm điều gì mới để mở rộng giới hạn bản thân không?",
-        a: "<span class='aok'>AOK</span> AOK chúc bạn luôn giữ tinh thần học hỏi để không ngừng nâng cấp chính mình."
+        a: "<span class='aok'>AOK</span> tin rằng mỗi thử thách mới sẽ giúp bạn mạnh mẽ và tự tin hơn từng ngày."
+      },
+      {
+        q: "Bạn muốn học thêm điều gì mới để mở rộng giới hạn bản thân không?",
+        a: "<span class='aok'>AOK</span> chúc bạn luôn giữ tinh thần học hỏi để không ngừng nâng cấp chính mình."
       }
     ];
 
