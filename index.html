@@ -1,38 +1,150 @@
-  question: "7. Điều gì khiến bạn hy vọng nhất khi bước sang năm mới?",
-answer: "AOK nghĩ rằng năm mới luôn mở ra những cơ hội tuyệt vời đang chờ bạn khám phá."
-},
-{
-question: "8. Nếu được gửi một tin nhắn cho chính mình vào cuối năm, bạn sẽ viết gì?",
-answer: "AOK mong rằng cuối năm bạn sẽ tự hào nhắn nhủ: “Mình đã làm rất tốt!”"
-},
-{
-question: "9. Bạn muốn thử thách bản thân bằng điều gì mới?",
-answer: "AOK tin rằng mỗi thử thách mới sẽ giúp bạn mạnh mẽ và tự tin hơn từng ngày."
-},
-{
-question: "10. Bạn muốn học thêm điều gì mới để mở rộng giới hạn bản thân không?",
-answer: "AOK chúc bạn luôn giữ tinh thần học hỏi để không ngừng nâng cấp chính mình."
-}
-];
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Câu hỏi ẩn danh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-function randomQuestion(){
-    const random = Math.floor(Math.random() * data.length);
-    document.getElementById("question").innerText = data[random].question;
-    document.getElementById("answer").innerHTML = 
-        "<span class='aok'>" + data[random].answer + "</span>";
-}
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-function copyContent(){
-    const text = document.getElementById("question").innerText + "\n\n" +
-                 document.getElementById("answer").innerText + "\n\n" +
-                 document.getElementById("userInput").value;
+    .card {
+      max-width: 340px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
 
-    navigator.clipboard.writeText(text);
-    alert("Đã sao chép nội dung!");
-}
+    .question {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #000;
+    }
 
-randomQuestion();
-</script>
+    .message {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .feedback-title {
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+      resize: none;
+      box-sizing: border-box;
+      margin-bottom: 18px;
+    }
+
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .club {
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    .aok {
+      font-weight: bold;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="question" id="question"></div>
+    <div class="message" id="message"></div>
+
+    <!-- PHẦN NGƯỜI DÙNG ĐIỀN -->
+    <div class="feedback-title">
+      Hãy cho AOK được biết cảm nhận của bạn  
+      (Họ và tên + MSSV + Mã lớp + cảm nhận)
+    </div>
+
+    <textarea
+      placeholder="Ví dụ: Nguyễn Văn A – 2212345 – CNTT01 – Em cảm thấy hoạt động này giúp em nhìn lại bản thân rõ hơn..."
+    ></textarea>
+
+    <div class="note">Chúc bạn một năm an lành.</div>
+    <div class="club">— CLB TNTN</div>
+  </div>
+
+  <script>
+    const data = [
+      {
+        q: "Năm vừa qua là một năm như thế nào đối với bạn?",
+        a: "<span class='aok'>AOK</span> nghĩ năm qua là một năm nhiều thử thách."
+      },
+      {
+        q: "Điều khiến bạn tự hào nhất về bản thân trong năm qua là gì?",
+        a: "<span class='aok'>AOK</span> tin bạn đã rất kiên cường và cố gắng."
+      },
+      {
+        q: "Khó khăn lớn nhất bạn đã trải qua trong năm là gì?",
+        a: "<span class='aok'>AOK</span> nghĩ khó khăn trong năm đã giúp bạn mạnh mẽ hơn."
+      },
+      {
+        q: "Bạn đã học được bài học quan trọng nào từ những trải nghiệm đó?",
+        a: "<span class='aok'>AOK</span> tin bạn học được bài học về sự kiên trì."
+      },
+      {
+        q: "Có thói quen nào bạn đã thay đổi trong năm vừa rồi không?",
+        a: "<span class='aok'>AOK</span> nghĩ bạn đã thay đổi được những thói quen chưa tốt."
+      },
+      {
+        q: "Bạn cảm thấy bản thân mình đã trưởng thành hơn ở điểm nào?",
+        a: "<span class='aok'>AOK</span> tin bạn đã trưởng thành hơn trong suy nghĩ."
+      },
+      {
+        q: "Điều gì trong năm qua khiến bạn tiếc nuối nhất?",
+        a: "<span class='aok'>AOK</span> nghĩ điều tiếc nuối là chưa dành đủ thời gian cho gia đình."
+      },
+      {
+        q: "Nếu được viết một câu cho bản thân khi khai bút, bạn sẽ viết gì?",
+        a: "<span class='aok'>AOK</span> mong bạn luôn tin vào chính mình khi khai bút."
+      },
+      {
+        q: "Bạn mong muốn thay đổi điều gì ở chính mình trong năm mới?",
+        a: "<span class='aok'>AOK</span> hy vọng bạn sẽ tích cực và kỷ luật hơn trong năm mới."
+      }
+    ];
+
+    const randomItem = data[Math.floor(Math.random() * data.length)];
+    document.getElementById("question").innerText = randomItem.q;
+    document.getElementById("message").innerHTML = randomItem.a;
+  </script>
 
 </body>
 </html>
